@@ -13,8 +13,8 @@
 namespace Matrix{
     class matrix{
     private:
-        std::vector<double> data;
         size_t row,cols;
+        std::vector<double> data;
     public:
         //fuctions initialization matrix
         matrix(size_t r,size_t c): row(r),cols(c),data(r*c,0.0){}

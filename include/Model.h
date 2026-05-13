@@ -74,11 +74,11 @@ namespace Model{
             }
         }
         Matrix::matrix Inference(const Matrix::matrix& x){
-            for(int i=0;i<layers_inference.size();i++){
+            for(size_t i=0;i<layers_inference.size();i++){
                 layers_inference[i].input_weight(layers[i].get_w(),layers[i].get_b());
             }
             Matrix::matrix input=x;
-            for(int i=0;i<layers_inference.size();i++){
+            for(size_t i=0;i<layers_inference.size();i++){
                 input=layers_inference[i].inference(input);
             }
             return input;
@@ -137,7 +137,7 @@ namespace Model{
         }
         void fit(const Matrix::matrix& x,const Matrix::matrix& y,const Matrix::matrix& x_test,const Matrix::matrix& y_test,double alpha,int epochss,int step){
             std::string activat_type=layers[layers.size()-1].get_activation_function();
-            int batch = epochss/step;
+            size_t batch = epochss/step;
             for(size_t i=0;i<batch;i++){
                 std::cout<<(i+1)*step<<"/"<<epochss<<"\n";
                 double loss=train(x,y,alpha,step);

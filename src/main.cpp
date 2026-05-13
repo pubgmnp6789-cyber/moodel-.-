@@ -43,8 +43,8 @@ int main(){
     model.add(ann::layer(n2,y.get_row(),"Softmax"));
     //train
     double alphal=0.05;
-    int epchoss=500;
-    int step=50;
+    int epchoss=100;
+    int step=20;
     model.fit(x,y,x_test,y_test,alphal,epchoss,step);
 
 
