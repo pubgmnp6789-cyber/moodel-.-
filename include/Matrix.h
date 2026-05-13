@@ -149,6 +149,19 @@ namespace Matrix{
             }
             return result;
         }
+        // Similarity of matrix
+        int Similarity(const Matrix::matrix &other) const{
+            if (row!=other.row||cols!=other.cols){
+                throw std::invalid_argument("row or cols!");
+            }
+            int Similarity_count=0;
+            for(size_t i=0;i<row*cols;i++){
+                if(data[i]==other.data[i]){
+                    Similarity_count++;
+                }
+            }
+            return Similarity_count;
+        }
         //cin and cout in matrix
         friend std::istream& operator>>(std::istream& is,matrix &mat){
             for(size_t i=0;i<mat.row;i++){
@@ -179,10 +192,11 @@ namespace Matrix{
             {
                 index++;
             }
+            data.resize(total_elements);
+            file.close();
             if(index<total_elements){
                 throw std::runtime_error("total elements!");
             }
-            file.close();
         }
         //output from file
         void output(const std::string& name_file) const{
@@ -227,17 +241,19 @@ namespace Matrix{
             }
         }
         //one hot for softmax label
-        Matrix::matrix one_hot(Matrix::matrix& y_label,size_t num_classes){
-            size_t sample=y_label.get_cols();
+        Matrix::matrix one_hot(size_t num_classes)const{
+            size_t sample=cols;
             Matrix::matrix result_label(num_classes,sample);
+            for(size_t i = 0; i < num_classes * sample; i++) {
+                result_label.data[i] = 0.0;
+            }
             for(size_t j=0;j<sample;j++){
-                size_t class_id = static_cast<size_t>(y_label(0,j));
-                if(class_id<num_classes){
-                    result_label(class_id,j)=1;
+                double raw_label = (*this)(0,j);
+                if(raw_label <0.0||raw_label>= static_cast<double>(num_classes)){
+                    throw std::out_of_range("one hot!");
                 }
-                else{
-                    throw std::out_of_range("class id!");
-                }
+                size_t class_id = static_cast<size_t> (raw_label);
+                result_label(class_id,j)=1.0;
             }
             return result_label;
         }

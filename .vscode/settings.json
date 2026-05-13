@@ -1,3 +1,7 @@
 {
     "C_Cpp.dimInactiveRegions": false
+    "scm.diffDecorations": "none",
+    "explorer.decorations.colors": false,
+    "explorer.decorations.badges": false,
+    "git.enabled": false
 }

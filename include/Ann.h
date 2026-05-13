@@ -113,6 +113,10 @@ namespace ann{
                 w.xavier_initialization();
             }
         }
+        void input_weight(const Matrix::matrix& weight,const Matrix::matrix& bias){
+            w=weight;
+            b=bias;
+        }
         Matrix::matrix forward(Matrix::matrix& x){
             Matrix::matrix A;
             Matrix::matrix Z=(w*x);
