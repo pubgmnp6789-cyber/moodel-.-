@@ -10,7 +10,7 @@ INCLUDE_DIR = include
 
 # 3. FILE CHẠY ĐẦU RA (EXECUTABLE)
 # Kết quả compile sẽ tạo ra file in_main.exe nằm trong thư mục build/
-TARGET = $(BUILD_DIR)/in_main.exe
+TARGET = $(BUILD_DIR)/main.exe
 
 # 4. TỰ ĐỘNG QUÉTS CÁC FILE CODE
 # Tìm tất cả các file .cpp trong thư mục src/
