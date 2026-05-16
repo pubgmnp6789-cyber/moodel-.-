@@ -38,3 +38,44 @@ Dự án bao gồm 3 tệp header (`.h`) đóng vai trò là xương sống củ
 ## 🚀 Hướng dẫn sử dụng (Quick Start)
 
 Dưới đây là đoạn mã mẫu minh họa cách khởi tạo và huấn luyện một mô hình mạng nơ-ron đa lớp phân loại 10 nhãn:
+#include <iostream>
+#include "Matrix.h"
+#include "Ann.h"
+#include "Model.h"
+
+int main() {
+    // 1. Chuẩn bị dữ liệu (Giả sử x_train, y_train đã được xử lý)
+    // Kích thước: X(features x samples), Y dạng One-Hot(classes x samples)
+    
+    // 2. Khởi tạo mô hình
+    Model::model my_model("My_First_Model");
+    
+    // 3. Xây dựng cấu trúc mạng (Ví dụ: Input 784 -> Hidden 512 -> Hidden 256 -> Output 10)
+    my_model.add(ann::layer(784, 512, "ReLU"));
+    my_model.add(ann::layer(512, 256, "ReLU"));
+    my_model.add(ann::layer(256, 10, "Softmax"));
+    
+    // 4. Thiết lập siêu tham số
+    double learning_rate = 0.05;
+    size_t batch_size = 256;
+    int epochs = 50;
+    int log_step = 1; // In log và lưu checkpoint sau mỗi 1 epoch
+    
+    // 5. Huấn luyện mô hình
+    my_model.fit(x_train, y_train, x_test, y_test, learning_rate, batch_size, epochs, log_step);
+    
+    return 0;
+}
+
+⚙️ Yêu cầu hệ thống
+Trình biên dịch (Compiler): Hỗ trợ chuẩn C++17 trở lên (bắt buộc do có sử dụng thư viện <filesystem> để tự động tạo cấu trúc thư mục Checkpoint).
+
+Hệ điều hành: Đa nền tảng (Windows/Linux/macOS).
+
+Công cụ build đề xuất: g++ (MinGW) hoặc Make.
+"""
+
+with open("README.md", "w", encoding="utf-8") as f:
+f.write(markdown_content)
+
+print("Generated README.md")
