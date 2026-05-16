@@ -1,4 +1,4 @@
-markdown_content = """# Mạng Nơ-ron Nhân Tạo (ANN) C++ Từ Con Số 0 (From Scratch)
+# Mạng Nơ-ron Nhân Tạo (ANN) C++ Từ Con Số 0 (From Scratch)
 
 Dự án này là một framework Deep Learning hạng nhẹ được xây dựng hoàn toàn bằng C++ nguyên bản  . Không sử dụng bất kỳ thư viện toán học hay học máy của bên thứ ba nào (như Eigen, TensorFlow, hay PyTorch), dự án tập trung vào việc tự triển khai các cấu trúc ma trận, thuật toán lan truyền xuôi (Forward Propagation), lan truyền ngược (Backward Propagation) và tối ưu hóa từ những công thức toán học cốt lõi nhất.
 
@@ -75,7 +75,3 @@ Hệ điều hành: Đa nền tảng (Windows/Linux/macOS).
 Công cụ build đề xuất: g++ (MinGW) hoặc Make.
 """
 
-with open("README.md", "w", encoding="utf-8") as f:
-f.write(markdown_content)
-
-print("Generated README.md")
