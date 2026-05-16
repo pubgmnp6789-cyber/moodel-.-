@@ -1,6 +1,6 @@
 # Mạng Nơ-ron Nhân Tạo (ANN) C++ Từ Con Số 0 (From Scratch)
 
-Dự án này là một framework Deep Learning hạng nhẹ được xây dựng hoàn toàn bằng C++ nguyên bản. Không sử dụng bất kỳ thư viện toán học hay học máy của bên thứ ba nào (như Eigen, TensorFlow, hay PyTorch), dự án tập trung vào việc tự triển khai các cấu trúc ma trận, thuật toán lan truyền xuôi (Forward Propagation), lan truyền ngược (Backward Propagation) và tối ưu hóa từ những công thức toán học cốt lõi nhất.
+Dự án này(moodel 🐧) là một framework Deep Learning hạng nhẹ được xây dựng hoàn toàn bằng C++ nguyên bản. Không sử dụng bất kỳ thư viện toán học hay học máy của bên thứ ba nào (như Eigen, TensorFlow, hay PyTorch), dự án tập trung vào việc tự triển khai các cấu trúc ma trận, thuật toán lan truyền xuôi (Forward Propagation), lan truyền ngược (Backward Propagation) và tối ưu hóa từ những công thức toán học cốt lõi nhất.
 
 Được thiết kế để tối ưu hóa hiệu suất trên CPU, framework này hoàn toàn có khả năng huấn luyện các tập dữ liệu thực tế như Digits hay Fashion-MNIST.
 
@@ -53,7 +53,7 @@ int main() {
     // Kích thước: X(features x samples), Y dạng One-Hot(classes x samples)
     
     // 2. Khởi tạo mô hình
-    Model::model my_model("My_First_Model");
+    Model::moodel my_model("My_First_Model");
     
     // 3. Xây dựng cấu trúc mạng (Ví dụ: Input 784 -> Hidden 512 -> Hidden 256 -> Output 10)
     my_model.add(ann::layer(784, 512, "ReLU"));
