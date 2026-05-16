@@ -32,7 +32,7 @@ Dự án này(moodel 🐧) là một framework Deep Learning hạng nhẹ đư�
 ├── data/                  # Thư mục chứa dữ liệu huấn luyện (đã được cấu hình gitignore)
 ├── include/               # Core Modules
 │   ├── Ann.h              # Cấu trúc Nơ-ron, hàm kích hoạt, hàm mất mát
-│   ├── Matrix.h           # Trái tim toán học, xử lý đại số tuyến tính
+│   ├── Matrix.h           # Xử lý đại số tuyến tính
 │   └── Model.h            # Bộ điều khiển trung tâm (Controller, Training Loop)
 ├── src/                   # Thư mục chứa mã nguồn thực thi chính (.cpp) và các Checkpoint log
 ├── .gitignore             # File cấu hình bỏ qua dữ liệu lớn khi push lên Git
